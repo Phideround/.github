@@ -20,10 +20,10 @@ Phideround is not a single product — it's a growing ecosystem of composable to
 
 | Project | Description |
 |---|---|
-| **[RealMarketAPI](https://github.com/Phideround)** | Real-time market data API with WebSocket streaming, REST endpoints, and MCP support. Production-grade, low-latency, and built to scale. |
-| **[RealMarketFeed](https://github.com/Phideround)** | An open directory of curated trading RSS feeds. Aggregated, categorized, and always up to date. |
-| **[Chrome Extensions](https://github.com/Phideround)** | Live market tools that live inside your browser. Real-time data where you actually work. |
-| **[SDKs](https://github.com/Phideround)** | First-class SDKs for JavaScript and TypeScript, with Python support on the way. Minimal setup, maximum output. |
+| **[RealMarketAPI](https://github.com/Phideround/RealMarketAPI)** | Real-time market data API with WebSocket streaming, REST endpoints, and MCP support. Production-grade, low-latency, and built to scale. |
+| **[RealMarketFeed](https://github.com/Phideround/RealMarketFeed)** | An open directory of curated trading RSS feeds. Aggregated, categorized, and always up to date. |
+| **[Chrome Extensions](https://github.com/Phideround/ChromeExtensions)** | Live market tools that live inside your browser. Real-time data where you actually work. |
+| **[SDKs](https://github.com/Phideround/SDKs)** | First-class SDKs for JavaScript and TypeScript, with Python support on the way. Minimal setup, maximum output. |
 
 ---
 
@@ -48,10 +48,10 @@ The same way Stripe simplified payments and Vercel simplified deployment, Phider
 
 **Explore the ecosystem:**
 
-- 📡 **Market Data** → Check out [RealMarketAPI](https://github.com/Phideround) for REST and WebSocket access to live market data
-- 📰 **Trading Feeds** → Browse [RealMarketFeed](https://github.com/Phideround) for an open directory of RSS sources
-- 🧩 **Browser Tools** → Install our [Chrome Extensions](https://github.com/Phideround) for live data in your workflow
-- 📦 **SDKs** → Integrate with our [JavaScript/TypeScript SDKs](https://github.com/Phideround) in minutes
+- 📡 **Market Data** → Check out [RealMarketAPI](https://github.com/Phideround/RealMarketAPI) for REST and WebSocket access to live market data
+- 📰 **Trading Feeds** → Browse [RealMarketFeed](https://github.com/Phideround/RealMarketFeed) for an open directory of RSS sources
+- 🧩 **Browser Tools** → Install our [Chrome Extensions](https://github.com/Phideround/ChromeExtensions) for live data in your workflow
+- 📦 **SDKs** → Integrate with our [JavaScript/TypeScript SDKs](https://github.com/Phideround/SDKs) in minutes
 
 Each project has its own README with setup instructions and API references.
 
@@ -61,8 +61,8 @@ Each project has its own README with setup instructions and API references.
 
 We build in public and welcome contributions from anyone.
 
-- 🐛 Found a bug? [Open an issue](https://github.com/Phideround)
-- 💡 Have an idea? [Start a discussion](https://github.com/Phideround)
+- 🐛 Found a bug? [Open an issue](https://github.com/Phideround/RealMarketAPI/issues)
+- 💡 Have an idea? [Start a discussion](https://github.com/orgs/Phideround/discussions)
 - 🔧 Want to contribute? Fork, build, and open a PR
 
 Every contribution — big or small — matters. We review PRs actively and move fast.
