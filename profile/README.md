@@ -1,123 +1,121 @@
 <div align="center">
 
-# ⚡ Phideround
+# Phideround
 
-### Real-time market infrastructure. Built for developers.
+### The team behind RealMarketAPI: real-time market data for developers and AI agents
 
-**Phideround** is a developer-first ecosystem of tools and APIs for real-time market data, trading infrastructure, and financial applications — designed for speed, modularity, and ease of integration.
+[Website](https://realmarketapi.com) · [Documentation](https://realmarketapi.com/en-US/docs) · [Pricing](https://realmarketapi.com/en-US/pricing) · [Playground](https://realmarketapi.com/en-US/playground) · [FAQ](https://realmarketapi.com/en-US/faq)
 
-[![Status](https://img.shields.io/badge/status-active-brightgreen?style=flat-square)](https://github.com/Phideround)
-[![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
-[![Made for Developers](https://img.shields.io/badge/made%20for-developers-blueviolet?style=flat-square)](https://github.com/Phideround)
+[![NuGet](https://img.shields.io/nuget/v/RealMarketAPI.Sdk?style=flat-square&label=NuGet&color=512BD4)](https://www.nuget.org/packages/RealMarketAPI.Sdk)
+[![npm](https://img.shields.io/npm/v/realmarketapi-js-sdk-beta/beta?style=flat-square&label=npm&color=CB3837)](https://www.npmjs.com/package/realmarketapi-js-sdk-beta)
+[![PyPI](https://img.shields.io/pypi/v/realmarketapi-python-sdk-beta?style=flat-square&label=PyPI&color=3775A9)](https://pypi.org/project/realmarketapi-python-sdk-beta/)
+[![Agent Skills](https://img.shields.io/badge/agent%20skills-161-6366F1?style=flat-square)](https://github.com/Phideround/realmarketapi-agent-skills)
 
 </div>
 
 ---
 
-## 🌐 Ecosystem Overview
+## RealMarketAPI
 
-Phideround is a composable ecosystem where each project works standalone or integrates seamlessly with others. Whether you need market data, trading feeds, SDKs, or interactive tools — we have you covered.
+[RealMarketAPI](https://realmarketapi.com) is a hosted API for live and historical market data across forex, metals, crypto, commodities, indices and stocks. Indicators, volatility analytics and market-structure signals are computed server-side, so clients receive answers instead of raw candles to process.
 
-### Core Infrastructure
+| | |
+|---|---|
+| **Coverage** | 61 symbols: forex, metals, crypto, commodities, indices, US stocks |
+| **Data** | Live prices with bid and ask, OHLCV candles on `M1` to `D1`, paged history |
+| **Analytics** | 14 technical indicators, volatility regimes and heatmaps, insight scores, liquidity and stop-hunt zones |
+| **Delivery** | REST, WebSocket streams, MCP server with 33 tools, Telegram bot, embeddable widgets |
+| **For AI agents** | Native MCP server, 161 open-source Agent Skills, `llms.txt` and an OpenAPI spec |
+| **Getting started** | Free plan with live data, not delayed data |
 
-| Project | Language | Description |
+```bash
+curl "https://api.realmarketapi.com/api/v1/price?apiKey=YOUR_API_KEY&symbolCode=XAUUSD&timeFrame=M1"
+```
+
+The API itself is a hosted service. Everything around it, listed below, is open source.
+
+---
+
+## Open-source ecosystem
+
+```
+                         RealMarketAPI (hosted)
+              REST  ·  WebSocket  ·  MCP server  ·  OpenAPI
+                                 │
+     ┌──────────────┬────────────┼────────────┬──────────────┐
+     SDKs       Agent Skills   Examples      Apps          Community
+  .NET · JS · Py   161 skills   video series  extension,     RSS feed
+                                             dashboard,     directory
+                                             calculators
+```
+
+### SDKs
+
+| Repository | Package | Description |
 |---|---|---|
-| **[RealMarketAPI.Sdk](https://github.com/Phideround/RealMarketAPI.Sdk)** | C# | Official .NET SDK providing strongly-typed, async access to real-time market prices, OHLCV candles, historical data, and technical indicators (SMA, EMA, RSI, MACD, Fibonacci, Support/Resistance) with built-in dependency injection support. |
-| **[RealMarketAPI.JavaScript.Sdk](https://github.com/Phideround/RealMarketAPI.JavaScript.Sdk)** | TypeScript | First-class JavaScript/TypeScript SDK for seamless integration into modern web applications and Node.js projects. |
-| **[RealMarketAPI.Python.Sdk](https://github.com/Phideround/RealMarketAPI.Python.Sdk)** | Python | Pythonic SDK for data scientists, analysts, and developers building trading algorithms and market analysis tools. |
+| [RealMarketAPI.Sdk](https://github.com/Phideround/RealMarketAPI.Sdk) | [`RealMarketAPI.Sdk`](https://www.nuget.org/packages/RealMarketAPI.Sdk) on NuGet | Official .NET SDK. Strongly typed, async, dependency injection, REST and WebSocket streams, full API coverage. |
+| [RealMarketAPI.JavaScript.Sdk](https://github.com/Phideround/RealMarketAPI.JavaScript.Sdk) | [`realmarketapi-js-sdk-beta`](https://www.npmjs.com/package/realmarketapi-js-sdk-beta) on npm | JavaScript and TypeScript SDK for Node.js 20+. REST client and WebSocket client. Beta. |
+| [RealMarketAPI.Python.Sdk](https://github.com/Phideround/RealMarketAPI.Python.Sdk) | [`realmarketapi-python-sdk-beta`](https://pypi.org/project/realmarketapi-python-sdk-beta/) on PyPI | Python 3.9+ SDK built on `httpx` and `websockets`. Beta. |
 
-### Data & Tools
+### AI agents
 
-| Project | Language | Description |
-|---|---|---|
-| **[RealMarketFeed](https://github.com/Phideround/RealMarketFeed)** | TypeScript | An open-source directory of curated trading RSS feeds across crypto, forex, stocks, and macro markets. Discover, contribute, and aggregate high-quality market news sources. [[Live](https://realmarketfeed.vercel.app)] |
-| **[RealMarketAPI-ChromeExtension](https://github.com/Phideround/RealMarketAPI-ChromeExtension)** | JavaScript | Browser extension powered by RealMarketAPI, providing live market prices and insights directly in your workflow. |
+| Repository | Description |
+|---|---|
+| [realmarketapi-agent-skills](https://github.com/Phideround/realmarketapi-agent-skills) | 161 Agent Skills (`SKILL.md`) in 15 agent roles, from market analyst and risk manager to quant researcher and a multi-agent trading desk. Works with Claude Code, Cursor, Codex and any agent that reads the format. |
 
-### Interactive Applications
+Connect any MCP client to `https://ai.realmarketapi.com/mcp` to give an assistant direct access to 33 market tools. See the [MCP docs](https://realmarketapi.com/en-US/docs/mcp).
 
-| Project | Language | Description |
-|---|---|---|
-| **[RealMarketLive](https://github.com/Phideround/RealMarketLive)** | TypeScript | Real-time market dashboard showcasing live market data and streaming capabilities. [[Live](https://project-qngkf.vercel.app)] |
-| **[learn-realmarketapi](https://github.com/Phideround/learn-realmarketapi)** | TypeScript | Interactive learning platform and documentation for integrating RealMarketAPI into your projects. [[Live](https://learn-realmarketapi.vercel.app)] |
-| **[calculator-realmarketapi](https://github.com/Phideround/calculator-realmarketapi)** | TypeScript | Real-time financial calculator powered by live market data. [[Live](https://calculator-realmarketapi.vercel.app)] |
-| **[realmarketapi-game](https://github.com/Phideround/realmarketapi-game)** | TypeScript | Interactive trading simulation game using real market data. Learn trading mechanics while having fun. [[Live](https://game-realmarketapi.vercel.app)] |
+### Examples and learning
 
----
+| Repository | Description |
+|---|---|
+| [code-with-realmarketapi](https://github.com/Phideround/code-with-realmarketapi) | Source code for the Code with RealMarketAPI video series: a gold price widget, a React trading dashboard, a Python alert bot and a .NET backend proxy. |
+| [learn-realmarketapi](https://github.com/Phideround/learn-realmarketapi) | Learning hub with trading and market-data guides. Live at [learn.realmarketapi.com](https://learn.realmarketapi.com). |
 
-## 🚀 Why Phideround
+### Apps and tools
 
-- **⚡ Performance-First** — Low-latency APIs and real-time streaming designed for speed and reliability at scale
-- **🧩 Truly Modular** — Use individual tools standalone or compose them into powerful applications
-- **🔧 Developer Experience** — Clean APIs, comprehensive documentation, and minimal setup overhead
-- **🔓 Open & Collaborative** — Built in public with an emphasis on community contributions
-- **📈 Production-Ready** — Enterprise-grade infrastructure trusted for real-time financial applications
+| Repository | Description |
+|---|---|
+| [RealMarketAPI-ChromeExtension](https://github.com/Phideround/RealMarketAPI-ChromeExtension) | Chrome extension showing live prices for crypto, forex and commodities over WebSocket. |
+| [RealMarketLive](https://github.com/Phideround/RealMarketLive) | Real-time market dashboard built on the streaming API. |
+| [calculator-realmarketapi](https://github.com/Phideround/calculator-realmarketapi) | Trading calculators for position size, margin, profit, risk and drawdown. Live at [calculator.realmarketapi.com](https://calculator.realmarketapi.com). |
+| [realmarketapi-game](https://github.com/Phideround/realmarketapi-game) | A market mini game. Live at [game.realmarketapi.com](https://game.realmarketapi.com). |
 
----
+### Community
 
-## 🏁 Quick Start
-
-Choose your entry point based on your use case:
-
-### For Market Data Integration
-```
-→ Start with RealMarketAPI SDKs (C#, JavaScript, Python)
-→ Real-time market prices, OHLCV data, and technical indicators
-→ WebSocket and REST API support
-```
-
-### For Market Intelligence
-```
-→ Browse RealMarketFeed for curated RSS sources
-→ Contribute high-quality market news and data feeds
-→ Community-driven discovery
-```
-
-### For Browser-Based Tools
-```
-→ Install RealMarketAPI-ChromeExtension
-→ Get live data where you work
-```
-
-### To Learn & Experiment
-```
-→ Explore learn-realmarketapi for tutorials
-→ Try calculator-realmarketapi or realmarketapi-game
-→ Clone, experiment, and build your own
-```
-
-Each repository includes detailed setup instructions, API references, and example code.
+| Repository | Description |
+|---|---|
+| [RealMarketFeed](https://github.com/Phideround/RealMarketFeed) | Open, community-driven directory of trading RSS feeds across crypto, forex, stocks and macro. Live at [rss.realmarketapi.com](https://rss.realmarketapi.com). |
 
 ---
 
-## 🤝 Contributing
+## Start here
 
-We build in public and welcome contributions from developers, traders, and enthusiasts.
-
-- **🐛 Found a bug?** [Open an issue](https://github.com/orgs/Phideround/discussions)
-- **💡 Have an idea?** [Start a discussion](https://github.com/orgs/Phideround/discussions)
-- **🔧 Want to contribute code?** Fork, build, and open a pull request
-- **📝 Improve docs?** Documentation contributions are highly valued
-
-We actively review PRs and aim to move fast. No contribution is too small.
+| If you want to | Go to |
+|---|---|
+| Make a first API call | [Getting started](https://realmarketapi.com/en-US/docs/getting-started) |
+| Try requests in the browser | [Playground](https://realmarketapi.com/en-US/playground) |
+| Use the API from .NET, JavaScript or Python | [SDKs](#sdks) |
+| Give an AI assistant market data | [MCP server](https://realmarketapi.com/en-US/docs/mcp) and [Agent Skills](https://github.com/Phideround/realmarketapi-agent-skills) |
+| Let a coding agent do the integration | [AI integration guide](https://realmarketapi.com/en-US/docs/ai-integration) |
+| See working projects | [code-with-realmarketapi](https://github.com/Phideround/code-with-realmarketapi) |
 
 ---
 
-## 🧭 Our Philosophy
+## Contributing
 
-**Pragmatism Over Perfection** — We ship working solutions and iterate based on real-world feedback. Done is better than perfect.
+Issues and pull requests are welcome on every repository listed here. Report a bug or request a feature in the repository it concerns. Each one has its own setup instructions.
 
-**Built by Developers, for Developers** — We use our own tools. We understand the pain points and build solutions we want to use.
+For questions about the API, your account or a plan, use the [contact page](https://realmarketapi.com/en-US/contact). To report a security issue, see the [security page](https://realmarketapi.com/en-US/security) and do not open a public issue.
 
-**Velocity Through Modularity** — Each component is independently useful, composable, and maintainable. Pick what you need, skip what you don't.
-
-**Transparency & Community** — We operate in public, share our roadmap, and value community input in shaping our direction.
+Never include an API key in an issue, a pull request or a commit.
 
 ---
 
 <div align="center">
 
-**Phideround** · Real-time market infrastructure · Built for developers, by developers
+Market data is informational and is not investment advice. See the [risk warning](https://realmarketapi.com/en-US/risk-warning).
 
-[![GitHub](https://img.shields.io/badge/GitHub-Phideround-181717?style=flat-square&logo=github)](https://github.com/Phideround)
+**[realmarketapi.com](https://realmarketapi.com)**
 
 </div>
